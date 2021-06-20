@@ -1,4 +1,4 @@
-name: wemogy AKS Login
+name: AKS Login (wemogy)
 author: wemogy
 description: Logs in to an AKS cluster
 branding:
