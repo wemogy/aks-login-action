@@ -20,7 +20,7 @@ A GitHub Action that logs in to an AKS cluster
 | Input            | Description                                  |
 | ---------------- | -------------------------------------------- |
 | `name`           | **Required** The name of the AKS cluster     |
-| `resource-group` | TThe Azure Resource Group of the AKS cluster |
+| `resource-group` | **Required** The Azure Resource Group of the AKS cluster |
 | `client-id` | **Required** The Azure Service Pricipal Client ID |
 | `client-secret` | **Required** The Azure Service Pricipal Secret |
 | `tenant-id` | **Required** The Azure Service Pricipal Tenant ID |
