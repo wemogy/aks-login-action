@@ -1,4 +1,4 @@
-# ![wemogy](assets/wemogy-logo.png) AKS Login (GitHub Action)
+# ![wemogy](https://wemogyimages.blob.core.windows.net/logos/wemogy-github-tiny.png) AKS Login (GitHub Action)
 
 A GitHub Action that logs in to an AKS cluster
 
