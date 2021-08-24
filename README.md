@@ -9,7 +9,7 @@ A GitHub Action that authenticates against an AKS cluster
   uses: wemogy/aks-login-action
   with:
     name: my-aks-cluster
-    resource-group: my-aks-resource-gropu
+    resource-group: my-aks-resource-group
     client-id: ${{ secrets.AZURE_APP_ID }}
     client-secret: ${{ secrets.AZURE_PASSWORD }}
     tenant-id: ${{ secrets.AZURE_TENANT_ID }}
