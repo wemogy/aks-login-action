@@ -21,6 +21,10 @@ inputs:
   tenant-id:
     description: "The Azure Service Pricipal Tenant ID"
     required: true
+  admin:
+    description: "Use the admin login (for AAD enabled clusters)"
+    required: true
+    default: "false"
 
 runs:
   using: "composite"
@@ -33,10 +37,20 @@ runs:
           --username ${{ inputs.client-id }} \
           --password ${{ inputs.client-secret }} \
           --tenant ${{ inputs.tenant-id }}
-
+          
     - name: Kubernetes Login
+      if: inputs.admin != "true"
       shell: bash
       run: |
         az aks get-credentials \
           --name ${{ inputs.name }} \
           --resource-group ${{ inputs.resource-group }}
+          
+    - name: Kubernetes Login
+      if: inputs.admin == "true"
+      shell: bash
+      run: |
+        az aks get-credentials \
+          --name ${{ inputs.name }} \
+          --resource-group ${{ inputs.resource-group }} \
+          --admin
