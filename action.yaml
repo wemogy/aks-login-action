@@ -37,20 +37,18 @@ runs:
           --username ${{ inputs.client-id }} \
           --password ${{ inputs.client-secret }} \
           --tenant ${{ inputs.tenant-id }}
-          
+
     - name: Kubernetes Login
-      if: inputs.admin != "true"
+      if: inputs.admin
       shell: bash
       run: |
-        az aks get-credentials \
-          --name ${{ inputs.name }} \
-          --resource-group ${{ inputs.resource-group }}
-          
-    - name: Kubernetes Login
-      if: inputs.admin == "true"
-      shell: bash
-      run: |
-        az aks get-credentials \
-          --name ${{ inputs.name }} \
-          --resource-group ${{ inputs.resource-group }} \
-          --admin
+        if [[ "${{ inputs.admin }}" == "true" ]]; then
+          az aks get-credentials \
+            --name ${{ inputs.name }} \
+            --resource-group ${{ inputs.resource-group }} \
+            --admin
+        else
+          az aks get-credentials \
+            --name ${{ inputs.name }} \
+            --resource-group ${{ inputs.resource-group }}
+        fi
