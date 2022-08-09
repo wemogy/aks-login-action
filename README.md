@@ -6,7 +6,7 @@ A GitHub Action that authenticates against an AKS cluster
 
 ```yaml
 - name: AKS Login
-  uses: wemogy/aks-login-action@1.1.0
+  uses: wemogy/aks-login-action@1.1.1
   with:
     name: my-aks-cluster
     resource-group: my-aks-resource-group
