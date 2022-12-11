@@ -55,5 +55,5 @@ runs:
           az aks get-credentials \
             --name ${{ inputs.name }} \
             --resource-group ${{ inputs.resource-group }} \
-            --subscription ${{ inputs.subscription-id }} \
+            --subscription ${{ inputs.subscription-id }}
         fi
