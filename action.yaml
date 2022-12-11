@@ -18,6 +18,9 @@ inputs:
   client-secret:
     description: "The Azure Service Pricipal Secret"
     required: true
+  subscription-id:
+    description: "The Azure Subscription of the cluster"
+    required: true
   tenant-id:
     description: "The Azure Service Pricipal Tenant ID"
     required: true
@@ -46,9 +49,11 @@ runs:
           az aks get-credentials \
             --name ${{ inputs.name }} \
             --resource-group ${{ inputs.resource-group }} \
+            --subscription ${{ inputs.subscription-id }} \
             --admin
         else
           az aks get-credentials \
             --name ${{ inputs.name }} \
-            --resource-group ${{ inputs.resource-group }}
+            --resource-group ${{ inputs.resource-group }} \
+            --subscription ${{ inputs.subscription-id }} \
         fi
