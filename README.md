@@ -6,7 +6,7 @@ A GitHub Action that authenticates against an AKS cluster
 
 ```yaml
 - name: AKS Login
-  uses: wemogy/aks-login-action@1.1.1
+  uses: wemogy/aks-login-action@1.2.0
   with:
     name: my-aks-cluster
     resource-group: my-aks-resource-group
@@ -23,6 +23,7 @@ A GitHub Action that authenticates against an AKS cluster
 | `resource-group` | **Required** The Azure Resource Group of the AKS cluster |
 | `client-id` | **Required** The Azure Service Pricipal Client ID |
 | `client-secret` | **Required** The Azure Service Pricipal Secret |
+| `subscription-id` | **Required** The Azure Subscription ID of the cluster |
 | `tenant-id` | **Required** The Azure Service Pricipal Tenant ID |
 | `admin` | Use the admin login (for AAD enabled clusters) |
 
